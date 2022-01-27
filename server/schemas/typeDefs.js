@@ -1,12 +1,12 @@
 const { gql } = require('apollo-server-express');
 
-const typeDefs = gql`
+const typeDefs = gql `
   type Category {
     _id: ID
     name: String
   }
 
-  type Product {
+  type Gift {
     _id: ID
     name: String
     description: String
@@ -19,7 +19,7 @@ const typeDefs = gql`
   type Order {
     _id: ID
     purchaseDate: String
-    products: [Product]
+    gifts: [Gift]
   }
 
   type User {
@@ -37,8 +37,8 @@ const typeDefs = gql`
 
   type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
+    gifts(category: ID, name: String): [Gift]
+    gift(_id: ID!): Gift
     user: User
     order(_id: ID!): Order
   }
@@ -47,7 +47,7 @@ const typeDefs = gql`
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
+    updateGift(_id: ID!, quantity: Int!): Gift
     login(email: String!, password: String!): Auth
   }
 `;
