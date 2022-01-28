@@ -12,10 +12,10 @@ export const LOGIN = gql`
 `;
 
 export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
+  mutation addOrder($gifts: [ID]!) {
+    addOrder(gifts: $gifts) {
       purchaseDate
-      products {
+      gifts {
         _id
         name
         description
