@@ -155,7 +155,8 @@ db.once('open', async() => {
                     image: 'Valentines-chocolate-5.jpg',
                     price: 90.99,
                     quantity: 10
-                },
+                }
+            ]);
 
                 console.log('gift seeded');
 
