@@ -20,7 +20,7 @@ export function idbPromise(storeName, method, object) {
       console.log('There was an error');
     };
 
-    request.onsuccess = function(e) {
+    /*request.onsuccess = function(e) {
       db = request.result;
       tx = db.transaction(storeName, 'readwrite');
       store = tx.objectStore(storeName);
@@ -52,5 +52,6 @@ export function idbPromise(storeName, method, object) {
         db.close();
       };
     };
+    */
   });
 }
