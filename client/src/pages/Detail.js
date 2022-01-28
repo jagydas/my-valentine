@@ -26,30 +26,30 @@ function Detail() {
 
   useEffect(() => {
     // already in global store
-    if (products.length) {
-      setCurrentProduct(products.find((product) => product._id === id));
+    if (gifts.length) {
+      setCurrentGifts(gifts.find((gift) => gift._id === id));
     }
     // retrieved from server
     else if (data) {
       dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products,
+        type: UPDATE_GIFTS,
+        gifts: data.gifts,
       });
 
-      data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+      data.gifts.forEach((gift) => {
+        idbPromise('gifts', 'put', gift);
       });
     }
     // get cache from idb
     else if (!loading) {
-      idbPromise('products', 'get').then((indexedProducts) => {
+      idbPromise('gifts', 'get').then((indexedGifts) => {
         dispatch({
-          type: UPDATE_PRODUCTS,
-          products: indexedProducts,
+          type: UPDATE_GIFTS,
+          gifts: indexedGifts,
         });
       });
     }
-  }, [products, data, loading, dispatch, id]);
+  }, [gifts, data, loading, dispatch, id]);
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
@@ -66,36 +66,36 @@ function Detail() {
     } else {
       dispatch({
         type: ADD_TO_CART,
-        product: { ...currentProduct, purchaseQuantity: 1 },
+        gift: { ...currentGift, purchaseQuantity: 1 },
       });
-      idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+      idbPromise('cart', 'put', { ...currentGift, purchaseQuantity: 1 });
     }
   };
 
   const removeFromCart = () => {
     dispatch({
       type: REMOVE_FROM_CART,
-      _id: currentProduct._id,
+      _id: currentGift._id,
     });
 
-    idbPromise('cart', 'delete', { ...currentProduct });
+    idbPromise('cart', 'delete', { ...currentGift });
   };
 
   return (
     <>
-      {currentProduct && cart ? (
+      {currentGift && cart ? (
         <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+          <Link to="/">← Back to gifts</Link>
 
-          <h2>{currentProduct.name}</h2>
+          <h2>{currentGift.name}</h2>
 
-          <p>{currentProduct.description}</p>
+          <p>{currentGift.description}</p>
 
           <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+            <strong>Price:</strong>${currentGift.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
             <button
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
+              disabled={!cart.find((p) => p._id === currentGift._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
@@ -103,8 +103,8 @@ function Detail() {
           </p>
 
           <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
+            src={`/images/${currentGift.image}`}
+            alt={currentGift.name}
           />
         </div>
       ) : null}
