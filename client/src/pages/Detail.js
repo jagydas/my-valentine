@@ -27,7 +27,7 @@ function Detail() {
   useEffect(() => {
     // already in global store
     if (gifts.length) {
-      setCurrentGifts(gifts.find((gift) => gift._id === id));
+      setCurrentGift(gifts.find((gift) => gift._id === id));
     }
     // retrieved from server
     else if (data) {

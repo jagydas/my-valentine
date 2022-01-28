@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Gift } = require('../models');
+const { User, Category, Gift } = require('../models');
 
 db.once('open', async() => {
             await Category.deleteMany();
@@ -133,7 +133,7 @@ db.once('open', async() => {
                 },
                 {
                     name: 'Chocolate',
-                    category: categories[5]._id,
+                    category: categories[4]._id,
                     description: 'Box of Chocolate.',
                     image: 'Valentines-chocolate-4.jpg',
                     price: 70.99,
@@ -141,7 +141,7 @@ db.once('open', async() => {
                 },
                 {
                     name: 'Chocolate',
-                    category: categories[5]._id,
+                    category: categories[4]._id,
                     description: 'Red Box of Chocolate.',
                     image: 'Valentines-chocolate-2.jpg',
                     price: 90.99,
@@ -150,7 +150,7 @@ db.once('open', async() => {
 
                 {
                     name: 'Chocolate Pop',
-                    category: categories[5]._id,
+                    category: categories[4]._id,
                     description: 'Chocolate Pop.',
                     image: 'Valentines-chocolate-5.jpg',
                     price: 90.99,
