@@ -65,6 +65,8 @@ h6 {
   font-size: 1rem;
 }
 
+
+
 p {
   font-size: 1.1rem;
   margin-top: 0;
@@ -82,10 +84,17 @@ a:hover {
 
 header {
   background: var(--tertiary);
+
 }
 
 header a {
   color: var(--light);
+
+}
+
+
+li {
+  list-style: none;
 }
 
 button {
@@ -109,6 +118,8 @@ button[disabled] {
   cursor: default;
   opacity: .8;
 }
+
+
 
 img {
   max-width: 100%;
