@@ -1,4 +1,4 @@
 # My Valentine
 
 # Deployed App
-https://dashboard.heroku.com/apps/my-valentine-app
+https://my-valentine-app.herokuapp.com/
