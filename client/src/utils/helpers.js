@@ -11,7 +11,7 @@ export function idbPromise(storeName, method, object) {
     let db, tx, store;
     request.onupgradeneeded = function(e) {
       const db = request.result;
-      db.createObjectStore('products', { keyPath: '_id' });
+      db.createObjectStore('gifts', { keyPath: '_id' });
       db.createObjectStore('categories', { keyPath: '_id' });
       db.createObjectStore('cart', { keyPath: '_id' });
     };
@@ -20,7 +20,7 @@ export function idbPromise(storeName, method, object) {
       console.log('There was an error');
     };
 
-    request.onsuccess = function(e) {
+    /*request.onsuccess = function(e) {
       db = request.result;
       tx = db.transaction(storeName, 'readwrite');
       store = tx.objectStore(storeName);
@@ -52,5 +52,6 @@ export function idbPromise(storeName, method, object) {
         db.close();
       };
     };
+    */
   });
 }
