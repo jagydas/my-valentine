@@ -80,7 +80,7 @@ db.once('open', async() => {
             category: categories[2]._id,
             description: 'Flower with red Vase',
             image: 'Valentines-flower-1.jpg',
-            price: 399.99,
+            price: 80.99,
             quantity: 30
         },
         {
@@ -88,7 +88,7 @@ db.once('open', async() => {
             category: categories[2]._id,
             description: 'Mixed flower bunch',
             image: 'Valentines-flower-2.jpg',
-            price: 199.99,
+            price: 90.99,
             quantity: 30
         },
         {
