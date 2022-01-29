@@ -1,9 +1,19 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-
+import {
+  UPDATE_CURRENT_CATEGORY
+} from '../../utils/actions';
+import { useStoreContext } from '../../utils/GlobalState';
 function Nav() {
 
+  const [state, dispatch] = useStoreContext();
+  function resetCategory(){
+    dispatch({
+      type: UPDATE_CURRENT_CATEGORY,
+      currentCategory: null,
+    });
+  }
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -42,7 +52,7 @@ function Nav() {
   return (
     <header className="flex-row px-1">
       <h1>
-        <Link to="/">
+        <Link to="/" onClick={resetCategory} >
           <span role="img" aria-label="gift bag">💖</span>
           My-Valentine
         </Link>
