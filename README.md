@@ -24,6 +24,7 @@ It's a single page application using React to showcase our ecommerce website. We
 
 # Screenshot of my application
 
+<img width="867" alt="image" src="https://user-images.githubusercontent.com/57235369/151712453-52639406-1fdf-46f7-bb48-8dae0947e28d.png">
 
 
 
