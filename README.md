@@ -23,10 +23,12 @@ It's a single page application using React to showcase our ecommerce website. We
     
 
 # Screenshot of my application
-![](./src/assets/images/Screenshot1.png)
 
 
 
 
-# Deployed App
+
+## Deployed App
 https://my-valentine-app.herokuapp.com/
+
+Contributed By: JagyDas, Briandgomez, Mital2021
