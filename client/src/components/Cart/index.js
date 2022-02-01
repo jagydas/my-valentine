@@ -9,7 +9,7 @@ import "./style.css";
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
